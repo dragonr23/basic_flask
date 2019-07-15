@@ -1,9 +1,20 @@
 {% extends 'base.html' %}
 
-
+<!-- you can perform functions but cant create funcs in jonja -->
 {% block content %}
 
   <h1>Data</h1>
   <h3>{{ name }} was passed.</h3>
+
+  <h1>Boston Sports</h1>
+
+  <p>My Favorite Team is {{ sports['soccer'] }} and {{ sports.hockey }}</p>
+
+  <ul>
+    {% for k, v in sports.items()%}
+    <li>{{k.title()}}: {{v}}</li>
+
+    {% endfor %}
+  </ul>
 
 {% endblock %}
